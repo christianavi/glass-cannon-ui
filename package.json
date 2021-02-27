@@ -1,0 +1,62 @@
+{
+  "name": "glass-cannon-desktop",
+  "productName": "Glass Cannon",
+  "version": "0.1.0-beta",
+  "description": "Make a custom Discord rich presence",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": {
+    "name": "Christian Avi Bulan",
+    "email": "christianavibulan@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "discord-rpc": "^3.2.0",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "electron": "11.3.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "src/assets/icons/icon.ico",
+        "iconUrl": "https://raw.githubusercontent.com/christianavi/Glass-Cannon-Desktop/main/src/assets/icons/icon.ico",
+        "setupIcon": "https://raw.githubusercontent.com/christianavi/Glass-Cannon-Desktop/main/src/assets/icons/icon.ico",
+        "loadingGif": "https://raw.githubusercontent.com/christianavi/Glass-Cannon-Desktop/main/src/assets/gif/loading.gif"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "glass_cannon_desktop"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

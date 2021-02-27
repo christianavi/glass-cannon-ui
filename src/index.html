@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <title>Glass Cannon</title>
+</head>
+
+<body>
+
+    <div id="main-container">
+
+        <div id="modal-container">
+            <div id="top">
+                <div id="title-bar">
+                    <img id="app-icon" src="assets/icons/icon.ico">
+                    <div id="name">Glass Cannon</div>
+                    <button id="close-button">
+                        <svg aria-hidden="false" width="15" height="15" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="modal-header">
+                    <div class="modal-header-title">Create a rich presence</div>
+                    <div class="modal-header-subtitle">Rich presence is a set of unique and actionable data displayed on
+                        your profile.</div>
+                </div>
+            </div>
+
+            <div id="modal-body">
+                
+                <div id="clientId-input-title" class="modal-body-title">Client ID<span style="color: red"> *<span></div>
+                <input id="clientId" class="input required-input" type="number" required="true" maxlength="20" name=""
+                    placeholder="815042636117311508" value="" autofocus>
+                <div class="input-tip">Not sure what a Client ID is? <a href="https://github.com/christianavi/glass-cannon/wiki/Creating-a-Discord-Application" target="_blank">Learn more.</a></div>
+                <div class="modal-body-title">Details</div>
+                <input id="details" class="input" type="string" required="false" maxlength="100" name="" value="">
+                <div class="modal-body-title">State</div>
+                <input id="state" class="input" type="string" required="false" maxlength="100" name="" value="">
+                <div class="modal-body-title">Assets</div>
+                <input id="largeImageKey" class="input" type="string" required="false" maxlength="100" name=""
+                    placeholder="Large Image Key" value="">
+                <input id="largeImageText" class="input" type="string" required="false" maxlength="100" name=""
+                    placeholder="Large Image Text" value="">
+                <input id="smallImageKey" class="input" type="string" required="false" maxlength="100" name=""
+                    placeholder="Small Image Key" value="">
+                <input id="smallImageText" class="input" type="string" required="false" maxlength="100" name=""
+                    placeholder="Small Image Text" value="">
+                <div class="modal-body-title">Timestamp</div>
+                <input id="startTimestamp" class="input" type="number" required="false" maxlength="100"
+                    placeholder="Start Timestamp" value="">
+                <input id="endTimestamp" class="input" type="number" required="false" maxlength="100"
+                    placeholder="End Timestamp" value="">
+                <div class="input-tip">Timestamps are in Unix time. Go to <a
+                        href="https://www.epochconverter.com/" target="_blank">Epoch Converter</a> to convert human readable time to
+                    Unix time.</div>
+                <div class="modal-body-title">Party</div>
+                <div id="party-input-container">
+                    <input id="partySize" class="input" type="number" required="false" maxlength="100" name=""
+                        placeholder="Party size" value="">
+                    <input id="partyMax" class="input" type="number" required="false" maxlength="100" name=""
+                        placeholder="Max party size" value="">
+                </div>
+                <input id="partyId" class="input" type="string" required="false" maxlength="100" name=""
+                    placeholder="Party ID" value="">
+                <input id="joinSecret" class="input" type="password" required="false" maxlength="100" name=""
+                    placeholder="Join Secret" value="">
+                <div id="buttonInputContainer">
+                    <div class="modal-body-title">Buttons</div>
+                    <input id="buttonOneLabel" class="input" type="string" required="false" maxlength="100" name=""
+                        placeholder="Button 1 Label" value="">
+                    <input id="buttonOneUrl" class="input" type="url" required="false" maxlength="100" name=""
+                        placeholder="Button 1 URL" value="">
+                    <input id="buttonTwoLabel" class="input" type="string" required="false" maxlength="100" name=""
+                        placeholder="Button 2 Label" value="">
+                    <input id="buttonTwoUrl" class="input" type="url" required="false" maxlength="100" name=""
+                        placeholder="Button 2 URL" value="">
+                </div>
+
+                <div class="modal-body-extra">🦈You have reached the end of the line.</div>
+
+            </div>
+
+            <div id="modal-footer">
+                <div class="modal-footer-title">Is everything ready?</div>
+                <button class="modal-footer-button">
+                    <div class="modal-footer-button-label">Start presence</div>
+                    <div class="bounce">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                       </div>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="assets/js/renderer.js"></script>
+</body>
+
+</html>
