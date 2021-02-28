@@ -1,4 +1,6 @@
-require('update-electron-app')()
+require('update-electron-app')({
+  logger: require('electron-log')
+})
 
 const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');

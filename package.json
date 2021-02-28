@@ -1,8 +1,9 @@
 {
   "name": "glass-cannon-desktop",
   "productName": "Glass Cannon",
-  "version": "0.1.0-beta",
+  "version": "0.1.1-beta",
   "description": "Make a custom Discord rich presence",
+  "repository": "github:christianavi/Glass-Cannon-Desktop",
   "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,15 +18,13 @@
   "license": "ISC",
   "dependencies": {
     "discord-rpc": "^3.2.0",
+    "electron-log": "^4.3.2",
     "electron-squirrel-startup": "^1.0.0",
     "update-electron-app": "^2.0.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
-    "@electron-forge/maker-deb": "^6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-    "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "electron": "11.3.0"
   },
   "config": {

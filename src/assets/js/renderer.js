@@ -3,8 +3,8 @@ const fs = require('fs');
 const os = require('os');
 const { Client } = require('discord-rpc');
 const package = {
-  "name": "glass-cannon-desktop",
-  "version": "0.1.0",
+  "name": "Glass Cannon",
+  "version": "0.1.1-beta",
 }
 
 let client = ""

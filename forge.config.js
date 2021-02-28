@@ -12,15 +12,15 @@ module.exports = {
                 "setupIcon": path.join(__dirname, "src", "assets", "icons", "icon.ico")
             }
         },
-        {
-            "name": "electron-forge/publisher-github",
+    ],
+    "publishers": [{
+            "name": "@electron-forge/publisher-github",
             "config": {
-                "respository": {
+                "repository": {
                     "owner": "christianavi",
                     "name": "Glass-Cannon-Desktop"
                 },
                 "prerelease": true
             }
-        }
-    ]
+    }]
 }
