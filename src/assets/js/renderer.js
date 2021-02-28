@@ -2,13 +2,12 @@ const { remote } = require('electron')
 const fs = require('fs');
 const os = require('os');
 const { Client } = require('discord-rpc');
-
-
 const package = {
   "name": "glass-cannon-desktop",
   "version": "0.1.0",
 }
 
+let client = ""
 const dir = `${os.homedir}/${process.platform === 'win32' ? '/AppData/Roaming' : '/.config'}`
 
 try {
@@ -67,8 +66,8 @@ function init() {
     footerBtn.classList.remove("red-button")
     footerBtn.classList.add("green-button")
   } else {
-    const client = new Client({ transport: 'ipc' })
     // Client ID check
+    client = new Client({ transport: 'ipc' })
     if (!document.querySelector("#clientId").value) {
       var modal = document.querySelector("#modal-body")
       modal.scrollTop = 0;
