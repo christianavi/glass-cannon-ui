@@ -28,35 +28,6 @@
     "electron": "11.3.0"
   },
   "config": {
-    "forge": {
-      "packagerConfig": {
-        "icon": "src/assets/icons/icon.ico",
-        "iconUrl": "https://raw.githubusercontent.com/christianavi/Glass-Cannon-Desktop/main/src/assets/icons/icon.ico",
-        "setupIcon": "https://raw.githubusercontent.com/christianavi/Glass-Cannon-Desktop/main/src/assets/icons/icon.ico",
-        "loadingGif": "https://raw.githubusercontent.com/christianavi/Glass-Cannon-Desktop/main/src/assets/gif/loading.gif"
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "glass_cannon_desktop"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
+    "forge": "forge.config.js"
   }
 }
