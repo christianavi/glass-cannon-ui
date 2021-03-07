@@ -7,6 +7,7 @@ const path = require('path');
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
+
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 440,
@@ -30,8 +31,33 @@ const createWindow = () => {
     require('electron').shell.openExternal(url);
   });
 
+  let tray = null
+  app.whenReady().then(() => {
+    tray = new Tray('src/assets/icons/icon.ico')
+    const contextMenu = Menu.buildFromTemplate([{
+        label: 'Glass Cannon',
+        click: async () => {
+          mainWindow.show()
+        }
+      },
+      {
+        type: 'separator'
+      },
+      {
+        label: 'Exit',
+        click: async () => {
+          app.quit()
+        }
+      }
+    ])
+    tray.setToolTip('Glass Cannon')
+    tray.setContextMenu(contextMenu)
+  })
+
 };
 app.on('ready', createWindow);
+
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
@@ -43,4 +69,3 @@ app.on('activate', () => {
     createWindow();
   }
 });
-

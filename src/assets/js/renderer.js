@@ -72,7 +72,7 @@ function init() {
       var modal = document.querySelector("#modal-body")
       modal.scrollTop = 0;
       modal.focus();
-      document.querySelector("#clientId-input-title").style.color = "red";
+      document.querySelector("#clientId-input-title").style.color = "#F04747";
       document.querySelector("#clientId-input-title").innerHTML = "Client ID - <span class='error'>Please enter a valid Client ID.</span>"
       document.querySelector(".bounce").style.display = "none"
       document.querySelector(".modal-footer-button-label").style.display = "block"
@@ -202,6 +202,13 @@ function init() {
 
     client.login({
       clientId: activity.clientId
+    }).catch((error) => {
+      console.error(error);
+      document.querySelector(".bounce").style.display = "none"
+      document.querySelector(".modal-footer-button-label").style.display = "block"
+       document.querySelector('.modal-footer-button-label').innerHTML = "Failed to login"
+       footerBtn.classList.remove("green-button")
+      footerBtn.classList.add("red-button")
     })
   }
 
@@ -210,7 +217,7 @@ function init() {
 closeBtn.addEventListener("click", function (event) {
   if (event.shiftKey == true) {
     var window = remote.getCurrentWindow();
-    window.minimize();
+    window.hide()
 
   } else {
     var window = remote.getCurrentWindow();

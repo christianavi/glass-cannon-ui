@@ -38,18 +38,18 @@
     --discord-green-hover: #3CA474;
     --discord-red: #F04747;
     --discord-red-hover: #D84040;
-    --primary-background-color: #fff;
-    --secondary-background-color: #f6f6f7;
-    --primary-text-color: #060607;
-    --secondary-text-color: #4F5660;
+    --primary-background-color: #363942; /* #fff; */
+    --secondary-background-color: #363942; /* #f6f6f7; */
+    --primary-text-color: #fdfdfe; /* #060607; */
+    --secondary-text-color: #bbbcc1; /* #4F5660; */
     --primary-button-color: #7289DA;
     --secondary-button-color: #747F8D;
     --secondary-button-color-hover: #68727F;
     --link-color: #0067E0;
-    --option-button-border: #EBEBEC;
-    --option-button-hover: #F4F5F6;
+    --option-button-border: #212226; /* #EBEBEC; */
+    --option-button-hover: #212226;/* #F4F5F6; */
     --option-button-border-hover: #E1E2E4;
-    --scrollbar-color: #CACBCE;
+    --scrollbar-color: #2E3338;
 }
 
 ::-webkit-scrollbar {
@@ -57,17 +57,17 @@
 }
 
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px white;
+    box-shadow: #2E3338;
     border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-color);
+    background: #202225;
     border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbar-color);
+    background: #2E3338;
 }
 
 html,
@@ -100,7 +100,7 @@ a, button {
 
 /* Top levels */
 #main-container {
-    background-color: #36393F;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -204,12 +204,12 @@ a, button {
 }
 
 #close-button:hover {
-    color: var(--primary-background-color);
+    color: var(--secondary-text-color);
     background-color: #F04747;
 }
 
 .modal-body-button {
-    background-color: var(--primary-background-color);
+    background-color: var(--option-button-border);
     border-radius: 5px;
     border: 1px solid;
     border-color: var(--option-button-border);
@@ -233,13 +233,14 @@ a, button {
 .modal-body-button-label {
     color: var(--primary-text-color);
     font-weight: 600;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 20px;
 }
 
 .modal-body-button-arrow {
     margin-left: auto;
     margin-right: 16px;
+    color: var(--secondary-text-color)
 }
 
 .modal-body-title {
@@ -247,6 +248,12 @@ a, button {
     margin-bottom: 8px;
     font-size: 12px;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 2px;
+    color: var(--secondary-text-color)
+    /* border-bottom: 1px solid var(--option-button-border); */
 }
 
 .modal-body-extra {
@@ -287,20 +294,26 @@ a, button {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid;
-    border-color: var(--option-button-border);
+    border-color: transparent; /* var(--option-button-border); */
+    background-color: var(--option-button-border);
     margin-bottom: 8px;
     color: var(--primary-text-color);
-    font-family: discord-light"
+    font-family: discord-light;
+}
+
+::placeholder {
+    color: var(--secondary-text-color)
 }
 
 .input:focus {
-    outline-color: var(--primary-button-color);
+    border-color: transparent; /* var(--option-button-border); */
+    outline-color: transparent;
     outline-width: 1px;
 }
 
 .required-input {
-    color: #747F8D;
-    background-color: #E1E3E5;
+    color: var(--primary-text-color);
+    background-color: var(--option-button-border);
 }
 
 .input-tip {
