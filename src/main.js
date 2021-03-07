@@ -14,7 +14,7 @@ const createWindow = () => {
     height: 558,
     // minWidth: 440,
     // minHeight: 558,
-    icon: "src/assets/icons/icon.ico",
+    icon: path.join(__dirname, "assets", "icons", "icon.ico"),
     maximizable: false,
     resizable: false,
     frame: false,
@@ -30,10 +30,10 @@ const createWindow = () => {
     e.preventDefault();
     require('electron').shell.openExternal(url);
   });
-
+  console.log("Start tray")
   let tray = null
   app.whenReady().then(() => {
-    tray = new Tray('src/assets/icons/icon.ico')
+    tray = new Tray(path.join(__dirname, "assets", "icons", "icon.ico"))
     const contextMenu = Menu.buildFromTemplate([{
         label: 'Glass Cannon',
         click: async () => {
@@ -53,6 +53,8 @@ const createWindow = () => {
     tray.setToolTip('Glass Cannon')
     tray.setContextMenu(contextMenu)
   })
+
+  console.log("End tray")
 
 };
 app.on('ready', createWindow);
