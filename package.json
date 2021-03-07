@@ -1,7 +1,7 @@
 {
   "name": "glass-cannon-desktop",
   "productName": "Glass Cannon",
-  "version": "0.1.1-beta",
+  "version": "0.1.2-beta",
   "description": "Make a custom Discord rich presence",
   "repository": "github:christianavi/Glass-Cannon-Desktop",
   "main": "src/main.js",

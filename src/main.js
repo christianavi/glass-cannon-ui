@@ -2,7 +2,7 @@ require('update-electron-app')({
   logger: require('electron-log')
 })
 
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, Menu, Tray } = require('electron');
 const path = require('path');
 if (require('electron-squirrel-startup')) {
   app.quit();

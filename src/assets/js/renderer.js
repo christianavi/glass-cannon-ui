@@ -4,7 +4,7 @@ const os = require('os');
 const { Client } = require('discord-rpc');
 const package = {
   "name": "Glass Cannon",
-  "version": "0.1.1-beta",
+  "version": "0.1.2-beta",
 }
 
 let client = ""
