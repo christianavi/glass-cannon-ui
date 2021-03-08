@@ -2,18 +2,20 @@ const { remote } = require('electron')
 const fs = require('fs');
 const os = require('os');
 const { Client } = require('discord-rpc');
-const package = {
-  "name": "Glass Cannon",
-  "version": "0.1.2-beta",
-}
+
+const appName = remote.app.getName()
+const appVer = remote.app.getVersion()
+
+console.log(appName)
+console.log(appVer)
 
 let client = ""
 const dir = `${os.homedir}/${process.platform === 'win32' ? '/AppData/Roaming' : '/.config'}`
 
 try {
-  if (fs.existsSync(`${dir}/${package.name}`)) {
-    if (fs.existsSync(`${dir}/${package.name}/rpc.json`)) {
-      const options = require(`${dir}/${package.name}/rpc.json`)
+  if (fs.existsSync(`${dir}/${appName}`)) {
+    if (fs.existsSync(`${dir}/${appName}/rpc.json`)) {
+      const options = require(`${dir}/${appName}/rpc.json`)
       Object.keys(options).forEach((key) => {
         if (key == "buttons") {
           if (options[key]) {}
@@ -32,7 +34,7 @@ try {
       })
     }
   } else {
-    fs.mkdir(`${dir}/${package.name}`, (err) => {
+    fs.mkdir(`${dir}/${appName}`, (err) => {
       if (err) {
         throw err;
       }
@@ -42,11 +44,13 @@ try {
   console.error(err);
 }
 
-const saveDir = `${dir}/${package.name}`
+const saveDir = `${dir}/${appName}`
 
-const closeBtn = document.querySelector('#close-button')
-const footerBtn = document.querySelector('.modal-footer-button')
+const closeBtn = document.querySelector('#close-button');
+const footerBtn = document.querySelector('.modal-footer-button');
+const appInfo = document.querySelector('#appInfo');
 
+appInfo.innerHTML = `${appName} ${appVer}`
 
 let isPresence = false
 
