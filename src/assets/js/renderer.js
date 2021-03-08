@@ -6,9 +6,6 @@ const { Client } = require('discord-rpc');
 const appName = remote.app.getName()
 const appVer = remote.app.getVersion()
 
-console.log(appName)
-console.log(appVer)
-
 let client = ""
 const dir = `${os.homedir}/${process.platform === 'win32' ? '/AppData/Roaming' : '/.config'}`
 
