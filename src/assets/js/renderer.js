@@ -215,10 +215,9 @@ function init() {
 };
 
 closeBtn.addEventListener("click", function (event) {
-  if (event.shiftKey == true) {
+  if (event.shiftKey == true || isPresence) {
     var window = remote.getCurrentWindow();
     window.hide()
-
   } else {
     var window = remote.getCurrentWindow();
     window.close();
