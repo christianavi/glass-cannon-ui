@@ -21,7 +21,7 @@ module.exports = {
 				owner: 'christianavi',
 				name: 'Glass-Cannon-Desktop',
 			},
-			prerelease: true,
+			prerelease: false,
 		},
 	}],
 };
