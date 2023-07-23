@@ -1,12 +1,11 @@
 {
-  "name": "glass-cannon-desktop",
+  "name": "glass-cannon-ui",
   "productName": "Glass Cannon",
   "version": "0.1.4",
   "description": "Make a custom Discord rich presence",
-  "repository": "christianavi/Glass-Cannon-Desktop",
+  "repository": "christianavi/glass-cannon-ui",
   "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"
